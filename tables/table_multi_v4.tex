@@ -1,0 +1,84 @@
+\begin{table}[htb]
+\begin{center}
+\caption{Heart failure case study: distortion metrics under multiple imputation for the Random survival forest learner (single amputation draw, ejection fraction, serum creatinine, serum sodium jointly amputated at 40\% MAR). Best value per column shown in bold.}
+\label{tab:multi-mi-heart_failure-ranger}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccccc}
+\hline
+method & $Brier_{nRMSE}$ & $Calib_{nRMSE}$ & $PDP_{nRMSE}$ & $SHAP_{L1}$ & $SHAP_{rank}$ & $VarImp_{L1}$ & $VarImp_{rank}$ \\
+\hline
+complete-case & 0.214 & 0.090 & \textbf{0.262} & 0.458 & 0.164 & \textbf{0.162} & \textbf{0.005} \\
+knn & 0.183 & 0.061 & 0.501 & 0.236 & 0.109 & 0.332 & 0.100 \\
+xgboost & \textbf{0.168} & \textbf{0.059} & 0.395 & 0.204 & 0.095 & 0.167 & 0.045 \\
+rf & 0.289 & 0.108 & 0.472 & 0.378 & 0.168 & 0.321 & 0.064 \\
+svm & 0.253 & 0.096 & 0.494 & 0.313 & 0.109 & 0.305 & 0.105 \\
+rpart & 0.375 & 0.202 & 0.370 & \textbf{0.200} & \textbf{0.073} & 0.233 & 0.050 \\
+\hline
+\end{tabular}%
+}
+\end{center}
+\end{table}
+
+\begin{table}[htb]
+\begin{center}
+\caption{Breast cancer case study: distortion metrics under multiple imputation for the Random survival forest learner (single amputation draw, tumor size, positive lymph nodes, progesterone receptor jointly amputated at 40\% MAR). Best value per column shown in bold.}
+\label{tab:multi-mi-breast-ranger}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccccc}
+\hline
+method & $Brier_{nRMSE}$ & $Calib_{nRMSE}$ & $PDP_{nRMSE}$ & $SHAP_{L1}$ & $SHAP_{rank}$ & $VarImp_{L1}$ & $VarImp_{rank}$ \\
+\hline
+complete-case & 0.137 & \textbf{0.149} & 0.658 & 0.668 & 0.405 & \textbf{0.051} & \textbf{0.000} \\
+knn & \textbf{0.031} & 0.178 & \textbf{0.317} & 0.190 & \textbf{0.083} & 0.133 & 0.024 \\
+xgboost & 0.165 & 0.154 & 0.644 & 0.228 & 0.202 & 0.181 & 0.071 \\
+rf & 0.374 & 0.242 & 0.525 & 0.201 & 0.095 & 0.140 & 0.048 \\
+svm & 0.355 & 0.196 & 0.460 & \textbf{0.165} & 0.095 & 0.100 & 0.036 \\
+rpart & 0.424 & 0.187 & 0.448 & 0.179 & 0.190 & 0.154 & 0.012 \\
+\hline
+\end{tabular}%
+}
+\end{center}
+\end{table}
+
+\begin{table}[htb]
+\begin{center}
+\caption{Colon cancer case study: distortion metrics under multiple imputation for the Random survival forest learner (single amputation draw, age, positive lymph nodes, tumor differentiation jointly amputated at 40\% MAR). Best value per column shown in bold.}
+\label{tab:multi-mi-colon_cancer-ranger}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccccc}
+\hline
+method & $Brier_{nRMSE}$ & $Calib_{nRMSE}$ & $PDP_{nRMSE}$ & $SHAP_{L1}$ & $SHAP_{rank}$ & $VarImp_{L1}$ & $VarImp_{rank}$ \\
+\hline
+complete-case & 0.141 & 0.261 & 0.933 & 0.516 & 0.364 & 0.100 & 0.050 \\
+knn & \textbf{0.140} & \textbf{0.195} & \textbf{0.388} & \textbf{0.299} & 0.132 & 0.103 & 0.082 \\
+xgboost & 0.436 & 0.326 & 0.650 & 0.340 & \textbf{0.102} & 0.128 & 0.091 \\
+rf & 0.550 & 0.346 & 0.723 & 0.579 & 0.146 & 0.174 & 0.095 \\
+svm & 0.588 & 0.281 & 0.798 & 0.455 & 0.158 & 0.144 & 0.036 \\
+rpart & 0.534 & 0.283 & 0.545 & 0.452 & 0.138 & \textbf{0.093} & \textbf{0.036} \\
+\hline
+\end{tabular}%
+}
+\end{center}
+\end{table}
+
+\begin{table}[htb]
+\begin{center}
+\caption{Primary biliary cirrhosis (PBC) case study: distortion metrics under multiple imputation for the Random survival forest learner (single amputation draw, bilirubin, albumin, copper jointly amputated at 40\% MAR). Best value per column shown in bold.}
+\label{tab:multi-mi-pbc-ranger}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccccc}
+\hline
+method & $Brier_{nRMSE}$ & $Calib_{nRMSE}$ & $PDP_{nRMSE}$ & $SHAP_{L1}$ & $SHAP_{rank}$ & $VarImp_{L1}$ & $VarImp_{rank}$ \\
+\hline
+complete-case & 0.302 & 0.727 & 0.693 & 0.599 & 0.405 & 0.175 & 0.163 \\
+knn & \textbf{0.083} & 0.156 & 0.860 & 0.564 & 0.465 & 0.245 & 0.054 \\
+xgboost & 0.191 & 0.165 & 0.381 & 0.505 & \textbf{0.344} & 0.125 & 0.051 \\
+rf & 0.188 & 0.165 & \textbf{0.361} & 0.598 & 0.530 & 0.141 & 0.039 \\
+svm & 0.100 & \textbf{0.087} & 0.495 & 0.495 & 0.368 & \textbf{0.080} & \textbf{0.021} \\
+rpart & 0.152 & 0.103 & 0.575 & \textbf{0.492} & 0.387 & 0.218 & 0.064 \\
+\hline
+\end{tabular}%
+}
+\end{center}
+\end{table}
+

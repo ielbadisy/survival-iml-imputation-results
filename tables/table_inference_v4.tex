@@ -1,0 +1,35 @@
+\begin{table}[htb]
+\begin{center}
+\caption{Inferential comparison of imputers under multiple imputation. For each learner-metric combination, a Friedman test (paired by replicate, $n=100$) tests equality of distortion across the six imputers. Post-hoc paired Wilcoxon signed-rank tests (Holm-adjusted) compare the best-performing imputer against each of the other five.}
+\label{tab:inference}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llccc}
+\hline
+Learner & Metric & Friedman $p$ & Best imputer & Sig.\ vs.\ best (Holm) \\
+\hline
+Cox & $Brier_{nRMSE}$ & $<0.001$ & rpart & 3/5 \\
+Cox & $Calib_{nRMSE}$ & $<0.001$ & xgboost & 2/5 \\
+Cox & $PDP_{nRMSE}$ & $<0.001$ & xgboost & 3/5 \\
+Cox & $SHAP_{L1}$ & $<0.001$ & knn & 4/5 \\
+Cox & $SHAP_{rank}$ & 0.010 & rf & 1/5 \\
+Cox & $VarImp_{L1}$ & 0.003 & rf & 2/5 \\
+Cox & $VarImp_{rank}$ & 0.377 & rf & 0/5 \\
+RSF & $Brier_{nRMSE}$ & $<0.001$ & knn & 4/5 \\
+RSF & $Calib_{nRMSE}$ & $<0.001$ & xgboost & 1/5 \\
+RSF & $PDP_{nRMSE}$ & $<0.001$ & knn & 4/5 \\
+RSF & $SHAP_{L1}$ & $<0.001$ & xgboost & 3/5 \\
+RSF & $SHAP_{rank}$ & 0.029 & rpart & 1/5 \\
+RSF & $VarImp_{L1}$ & $<0.001$ & xgboost & 4/5 \\
+RSF & $VarImp_{rank}$ & 0.774 & knn & 0/5 \\
+SurvDNN & $Brier_{nRMSE}$ & $<0.001$ & rpart & 3/5 \\
+SurvDNN & $Calib_{nRMSE}$ & $<0.001$ & xgboost & 2/5 \\
+SurvDNN & $PDP_{nRMSE}$ & $<0.001$ & knn & 3/5 \\
+SurvDNN & $SHAP_{L1}$ & $<0.001$ & knn & 1/5 \\
+SurvDNN & $SHAP_{rank}$ & 0.010 & svm & 1/5 \\
+SurvDNN & $VarImp_{L1}$ & 0.005 & xgboost & 1/5 \\
+SurvDNN & $VarImp_{rank}$ & 0.032 & xgboost & 2/5 \\
+\hline
+\end{tabular}%
+}
+\end{center}
+\end{table}
